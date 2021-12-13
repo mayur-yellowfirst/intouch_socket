@@ -5,19 +5,19 @@
 //     path = require('path');
 // server.listen(8094);
 
-var app = require('express')();
-var http = require('http').Server(app);
-const cors = require('cors');
-var io = require('socket.io')(http);
+// var app = require('express')();
+// var http = require('http').Server(app);
+// const cors = require('cors');
+// var io = require('socket.io')(http);
 
 
-// const io = require("socket.io")(8093, {
-//     cors: {
-//         origin: '*:*'
-//     }
-// });
+const io = require("socket.io")(8093, {
+    cors: {
+        origin: '*:*'
+    }
+});
 
-app.use(cors());
+// app.use(cors());
 
 let users = [];
 
@@ -62,6 +62,6 @@ io.on("connection", (socket) => {
 
 console.log('here');
 
-http.listen(8093, function () {
-    console.log('listening on *:8093');
-});
+// http.listen(8093, function () {
+//     console.log('listening on *:8093');
+// });
